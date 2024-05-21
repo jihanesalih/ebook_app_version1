@@ -15,7 +15,7 @@ class myBook extends StatelessWidget {
       height: 200,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(
-          Radius.circular(0),
+          Radius.circular(10),
         ),
         image: DecorationImage(
           image: AssetImage(imagePath),

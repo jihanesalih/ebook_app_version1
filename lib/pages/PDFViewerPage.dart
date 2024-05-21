@@ -27,7 +27,8 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
   Future<File> _loadPDF() async {
     try {
       // Load the PDF file from assets
-      final byteData = await rootBundle.load('assets/${widget.bookname}.pdf');
+      final byteData =
+          await rootBundle.load('assets/pdfs/${widget.bookname}.pdf');
       // Get the temporary directory
       final dir = await getTemporaryDirectory();
       // Create a temporary file

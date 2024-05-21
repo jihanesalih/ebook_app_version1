@@ -14,7 +14,7 @@ class IntroPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/back.jpg'),
+            image: AssetImage('assets/background/back.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -24,7 +24,7 @@ class IntroPage extends StatelessWidget {
             children: [
               //logo
               Image.asset(
-                'assets/logo1.png',
+                'assets/logos/logo1.png',
                 height: 240,
               ),
 

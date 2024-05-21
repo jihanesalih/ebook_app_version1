@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/PDFViewerPage.dart';
-import 'package:flutter_application_1/pages/book_widget.dart';
 import 'package:flutter_application_1/pages/books.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -41,7 +37,7 @@ class HomePage extends StatelessWidget {
               children: [
                 //logo
                 Image.asset(
-                  'assets/logo1.png',
+                  'assets/logos/logo1.png',
                   width: 200,
                 ),
                 //add space
@@ -137,11 +133,12 @@ class HomePageMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // body: PDFViewerPage(),
-        /*  body: Column(
+      // body: PDFViewerPage(),
+      /*  body: Column(
         children: [
           Books(),
         ],), */
-        );
+      body: Books(),
+    );
   }
 }

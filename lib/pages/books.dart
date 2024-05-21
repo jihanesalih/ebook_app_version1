@@ -8,9 +8,6 @@ class Books extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text("Book App")),
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -28,7 +25,7 @@ class Books extends StatelessWidget {
                       );
                     },
                     child: myBook(
-                      imagePath: 'assets/boundaries cover.jpg',
+                      imagePath: 'assets/covers/boundaries cover.jpg',
                     ),
                   ),
                   GestureDetector(
@@ -37,11 +34,24 @@ class Books extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                PDFViewerPage(bookname: "TP1")),
+                                PDFViewerPage(bookname: "Rich Dad Poor Dad")),
                       );
                     },
                     child: myBook(
-                      imagePath: 'assets/Rich dad cover.jpg',
+                      imagePath: 'assets/covers/Rich dad cover.jpg',
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PDFViewerPage(
+                                bookname: "Atomic Habits James Clear")),
+                      );
+                    },
+                    child: myBook(
+                      imagePath: 'assets/covers/Atomic habits cover.jpg',
                     ),
                   ),
                 ],
