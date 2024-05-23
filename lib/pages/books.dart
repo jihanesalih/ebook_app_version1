@@ -7,59 +7,66 @@ class Books extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                PDFViewerPage(bookname: "Boundaries")),
-                      );
-                    },
-                    child: myBook(
-                      imagePath: 'assets/covers/boundaries cover.jpg',
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                PDFViewerPage(bookname: "Rich Dad Poor Dad")),
-                      );
-                    },
-                    child: myBook(
-                      imagePath: 'assets/covers/Rich dad cover.jpg',
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PDFViewerPage(
-                                bookname: "Atomic Habits James Clear")),
-                      );
-                    },
-                    child: myBook(
-                      imagePath: 'assets/covers/Atomic habits cover.jpg',
-                    ),
-                  ),
-                ],
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          PDFViewerPage(bookname: "Boundaries")),
+                );
+              },
+              child: myBook(
+                imagePath: 'assets/covers/boundaries cover.jpg',
               ),
-            ],
-          ),
+            ),
+            /*  GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            PDFViewerPage(bookname: "Rich_Dad_Poor_Dad")),
+                  );
+                },
+                child: myBook(
+                  imagePath: 'assets/covers/Rich dad cover.jpg',
+                ),
+              ), */
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PDFViewerPage(
+                          bookname: "Atomic _Habits_ James _Clear")),
+                );
+              },
+              child: myBook(
+                imagePath: 'assets/covers/Atomic habits cover.webp',
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          PDFViewerPage(bookname: "The_Strength_In_Our_Scars")),
+                );
+              },
+              child: myBook(
+                imagePath: 'assets/covers/scars.jpg',
+              ),
+            ),
+          ],
         ),
-      ),
+      ],
     );
   }
 }

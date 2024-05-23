@@ -1,8 +1,5 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/intro_page.dart';
-
 
 void main() {
   runApp(const ebook());
@@ -23,8 +20,8 @@ class ebook extends StatelessWidget {
       // scaffoldBackgroundColor: Colors.black,
       // ),
       title: 'Ebook App',
-     home: IntroPage(),
-       // home:Books()
+      home: IntroPage(),
+      // home:Books()
     );
   }
 }

@@ -14,7 +14,7 @@ class IntroPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/background/back.jpg'),
+            image: AssetImage('assets/backgrounds/back.jpg'),
             fit: BoxFit.cover,
           ),
         ),

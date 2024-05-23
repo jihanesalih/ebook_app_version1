@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/books.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/pages/user_profil.dart';
+import 'package:flutter_application_1/pages/categories.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,7 +17,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text(
-            'Ebook App',
+            'Library',
             style: TextStyle(color: Colors.white),
           ),
           // backgroundColor: Colors.black,
@@ -31,6 +33,7 @@ class HomePage extends StatelessWidget {
             );
           }),
         ),
+
         drawer: Drawer(
             backgroundColor: Colors.black,
             child: Column(
@@ -44,7 +47,7 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                const Padding(
+                Padding(
                   padding: const EdgeInsets.only(left: 25.0),
                   child: ListTile(
                     leading: Icon(
@@ -55,6 +58,12 @@ class HomePage extends StatelessWidget {
                       'user ',
                       style: TextStyle(color: Colors.white),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => UserProfile()),
+                      );
+                    },
                   ),
                 ),
 
@@ -94,7 +103,32 @@ class HomePage extends StatelessWidget {
               ],
             )),
         //body
-        body: HomePageMain(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintStyle: TextStyle(color: Colors.white),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                      contentPadding: EdgeInsets.all(8.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none),
+                      filled: true,
+                      // fillColor: Colors.grey[800]),
+                      fillColor: Color.fromARGB(255, 39, 38, 38)),
+                ),
+                HomePageMain(),
+              ],
+            ),
+          ),
+        ),
 
         //bottom navigation bar
         bottomNavigationBar: BottomAppBar(
@@ -111,15 +145,22 @@ class HomePage extends StatelessWidget {
                   onPressed: () {},
                 ),
                 IconButton(
+                  icon: const Icon(Icons.category),
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CategoriesPage()),
+                    );
+                  },
+                ),
+                /*  IconButton(
                   icon: const Icon(Icons.search),
                   color: Colors.white,
                   onPressed: () {},
-                ),
-                IconButton(
-                  icon: const Icon(Icons.more_vert),
-                  color: Colors.white,
-                  onPressed: () {},
-                ),
+                ), */
+                // three point icon
+                //icon: const Icon(Icons.more_vert),
               ],
             ),
           ),
@@ -132,13 +173,6 @@ class HomePage extends StatelessWidget {
 class HomePageMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // body: PDFViewerPage(),
-      /*  body: Column(
-        children: [
-          Books(),
-        ],), */
-      body: Books(),
-    );
+    return Books();
   }
 }
